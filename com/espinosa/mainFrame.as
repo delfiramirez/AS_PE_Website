@@ -23,6 +23,9 @@ var appBackground_mc:MovieClip;
 var appAuthor_mc:MovieClip;
 var appAuthorBio_mc:MovieClip;
 
+var app_mc:MovieClip;
+var dest_mc:MovieClip;
+
 var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
 var resizeappListener:Object = new Object ();
@@ -180,8 +183,8 @@ moveSquare = function(targetX:Number, targetY:Number)
 
 appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 {
-	var v3 = 7;
-	var v9 = 5;
+	var v3:Number = 7;
+	var v9:Number  = 5;
 	if (Math.abs (_square._x - targetX) < 0.4 && Math.abs (_square._y - targetY) < 0.4)
 	{
 		_square._x = targetX;
@@ -191,7 +194,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 	}
 	else
 	{
-		var v4 = (targetX - _square._x) / 5;
+		var v4:Number = (targetX - _square._x) / 5;
 		if (v4 < 0)
 		{
 			_square._x += Math.max (-v3, v4);
@@ -200,7 +203,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 		{
 			_square._x += Math.min (v3, v4);
 		}
-		var v5 = (targetY - _square._y) / 5;
+		var v5:Number = (targetY - _square._y) / 5;
 		if (v5 < 0)
 		{
 			_square._y += Math.max (-v3, v5);
@@ -209,9 +212,9 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 		{
 			_square._y += Math.min (v3, v5);
 		}
-		var v6 = v9 * (Math.min (Math.abs (v4 + v5) / 2, v3)) / v3;
-		var v8 = new flash.filters.BlurFilter (v6, v6, 1);
-		var v7 = new Array ();
+		var v6:Number = v9 * (Math.min (Math.abs (v4 + v5) / 2, v3)) / v3;
+		var v8:Number = new flash.filters.BlurFilter (v6, v6, 1);
+		var v7:Number = new Array ();
 		v7.push (v8);
 		_square.filters = v7;
 	}
