@@ -19,7 +19,9 @@ var appMusic_mc:MovieClip;
 var _square:MovieClip;
 var appClipContent:MovieClip;
 var appClipBar2_mc:MovieClip;
-appBackgroundappAuthorappAuthorBio_mc:MovieClip;
+var appBackground_mc:MovieClip;
+var appAuthor_mc:MovieClip;
+var appAuthorBio_mc:MovieClip;
 
 var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
@@ -39,8 +41,8 @@ var onMail:Function;
 
 //Init Values
 
-this.appBackgroundappAuthorappAuthorBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
-this.appBackgroundappAuthorappAuthorBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
+this.appBackground_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
+this.appBackgroundo_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
 
 
 toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
