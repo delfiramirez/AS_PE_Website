@@ -11,7 +11,7 @@ import com.mosesSupposes.fuse.*;
 ZigoEngine.simpleSetup (Shortcuts,PennerEasing);
 ZigoEngine.register (PennerEasing,Shortcuts,FuseFMP,FuseItem);
 
-
+var BASE_URL:String = "http://www.pereespinosa.net"; 
 var appScreen_txt:Text;
 var appappVideo_mc:MovieClip;
 var appImages_mc:MovieClip;
