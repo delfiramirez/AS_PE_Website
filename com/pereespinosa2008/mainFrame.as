@@ -17,6 +17,9 @@ var appVideo_mc:MovieClip;
 var appImages_mc:MovieClip;
 var appMusic_mc:MovieClip;
 var _square:MovieClip;
+var appClipContent:MovieClip;
+var appClipBar2_mc:MovieClip;
+appBackgroundBio_mc:MovieClip;
 
 var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
@@ -36,8 +39,8 @@ var onMail:Function;
 
 //Init Values
 
-this.fondoBio_mc._visible = this.content1._visible = this.barra2_mc._visible = false;
-this.fondoBio_mc._alpha = this.barra2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
+this.appBackgroundBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
+this.appBackgroundBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
 
 
 toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
@@ -73,6 +76,8 @@ resizeappListener.onResize = function ():Void
 
 
 Stage.addListener (resizeappListener);
+
+//Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
 this.appContainer_mc._x = 0;
@@ -145,7 +150,7 @@ item1.separatorBefore = true;
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
-//Motion
+// Other Motion
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -219,7 +224,7 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 };
 
 
-//Start
+// Start MainFrame
 
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
