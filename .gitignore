@@ -2,4 +2,11 @@
 *.swp
 *.log
 
+# ActionScript Attributes
+*.as merge=union
+*.swf binary
+*.swc binary
+*.fla binary
 
+# Auto detect text files and perform LF normalization
+* text=auto
