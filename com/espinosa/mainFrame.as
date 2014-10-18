@@ -13,13 +13,13 @@ ZigoEngine.register (PennerEasing,Shortcuts,FuseFMP,FuseItem);
 
 
 var appScreen_txt:Text;
-var appVideo_mc:MovieClip;
+var appappVideo_mc:MovieClip;
 var appImages_mc:MovieClip;
 var appMusic_mc:MovieClip;
 var _square:MovieClip;
 var appClipContent:MovieClip;
 var appClipBar2_mc:MovieClip;
-var appBackgroundBio_mc:MovieClip;
+appBackgroundappAuthorappAuthorBio_mc:MovieClip;
 
 var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
@@ -32,24 +32,24 @@ var blur:BlurFilter = new BlurFilter (totalBlur, totalBlur, 3);
 
 var appMenu:ContextMenu = new ContextMenu ();
 
-var onCopyright:Function;
+var appCopyright:Function;
 var onMail:Function;
 
 
 
-// --1-- Init Values
+//Init Values
 
-	this.appBackgroundBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
-	this.appBackgroundBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
-
-
-	toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
-
-	Stage.scaleMode = "noScale";
-	Stage.align = "TL";
+this.appBackgroundappAuthorappAuthorBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
+this.appBackgroundappAuthorappAuthorBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
 
 
-// --2 -- Object Screen Functions
+toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
+
+Stage.scaleMode = "noScale";
+Stage.align = "TL";
+
+
+// Object Screen Functions
 
 toggleFullScreen = function():Void
 {
@@ -64,26 +64,24 @@ toggleFullScreen = function():Void
 	}
 }
 
+
+
 resizeappListener.onResize = function ():Void
-	{
+{
 
 	toggleFullScreenButton._x = 900;
 	toggleFullScreenButton._y = 13;
 	toggleFullScreenButton.appScreen_txt.text = "appScreen normal";
-	};
+};
 
 
 Stage.addListener (resizeappListener);
 
-
-
-// --3 -- Load Effects and Motion
-
+//Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
-
-	this.appContainer_mc._x = 0;
-	this.appContainer_mc._y = 0;
+this.appContainer_mc._x = 0;
+this.appContainer_mc._y = 0;
 appContainer_mc.filters = new Array (blur);
 
 appListener.onLoadStart = function ()
@@ -120,41 +118,39 @@ appListener.onLoadComplete = function ():Void
 
 appMVL.addListener (appListener);
 
-
-// --4-- Contextual Menu
-
+//Contextual Menu
 
 _level0.appMenu = appMenu;
 
-onCopyright = function ():Void
-	{
-	trace ("onCopyright(" + arguments + ")");
-	getURL ("http://segonquart.net", "_blank");
-	};
-
-onMail = function ():Void
-	{
-	trace ("onCopyright(" + arguments + ")");
-	getURL ("mailto:Segonquart Studio <2qt@segonquart.net>");
-	};
-
 appMenu.hideBuiltInItems ();
 
-	var item_ = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
-	var item0 = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
-	var item2 = new ContextMenuItem ("http://www.segonquart.net", onCopyright);
-	var item3 = new ContextMenuItem ("2qt@segonquart.net", onMail);
+onCopyright = function ():Void
+{
+trace ("onCopyright(" + arguments + ")");
+getURL ("http://segonquart.net", "_blank");
+};
+
+onMail = function ():Void
+{
+trace ("onCopyright(" + arguments + ")");
+getURL ("mailto:Segonquart Studio <2qt@segonquart.net>");
+};
 
 
-	item_.separatorBefore = true;
-	item0.separatorBefore = true;
-	item1.separatorBefore = true;
+var item_ = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
+var item0 = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
+var item2 = new ContextMenuItem ("http://www.segonquart.net", onCopyright);
+var item3 = new ContextMenuItem ("delfin@delfiramirez.info", onMail);
+
+
+item_.separatorBefore = true;
+item0.separatorBefore = true;
+item1.separatorBefore = true;
+
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
-
-// --5-- Other Motion
-
+// Other Motion
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -210,7 +206,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 }
 
 
-// --6-- Object Prototype Fader 
+// Object Prototype Fader
 
 
 MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
@@ -228,16 +224,15 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 };
 
 
-// --7-- Start MainFrame
-
+// Start MainFrame
 
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
-	mcLoader.addListener (this);
-	mcLoader.loadClip ("appBar.swf",container);
+mcLoader.addListener (this);
+mcLoader.loadClip ("barra.swf",container);
 
 onLoadInit = function(mc:MovieClip)
-	{
+{
 	trace ("onLoadInit: " + mc);
-	}
+}
 
