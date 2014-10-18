@@ -27,6 +27,13 @@ var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
 var resizeappListener:Object = new Object ();
 
+var addEventListener:Function;
+var removeEventListener:Function;
+var onResize:Function;
+var onLoadStart:Function;
+var onLoadComplete:Function;
+
+
 var totalBlur:Number = 8;
 var noBlur:Number = 0;
 var blurTween:Tween;
@@ -36,6 +43,9 @@ var appMenu:ContextMenu = new ContextMenu ();
 
 var appCopyright:Function;
 var onMail:Function;
+
+var moveSquare:Function;
+var appSquareMov:Function;
 
 
 
@@ -79,7 +89,7 @@ resizeappListener.onResize = function ():Void
 
 Stage.addListener (resizeappListener);
 
-//Load Effects and Motion
+//Public Methods : Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
 this.appContainer_mc._x = 0;
@@ -120,7 +130,7 @@ appListener.onLoadComplete = function ():Void
 
 appMVL.addListener (appListener);
 
-//Contextual Menu
+//Private Method Contextual Menu
 
 _level0.appMenu = appMenu;
 
@@ -152,7 +162,7 @@ item1.separatorBefore = true;
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
-// Other Motion
+// Private Method Motions
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -208,7 +218,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 }
 
 
-// Object Prototype Fader
+// Private Method : Object Prototype Fader
 
 
 MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
@@ -226,7 +236,7 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 };
 
 
-// Start MainFrame
+// Init: Start MainFrame
 
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
