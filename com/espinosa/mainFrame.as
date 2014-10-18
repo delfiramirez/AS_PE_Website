@@ -37,7 +37,7 @@ var onMail:Function;
 
 
 
-//Init Values
+// --1-- Init Values
 
 	this.appBackgroundBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
 	this.appBackgroundBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
@@ -49,7 +49,7 @@ var onMail:Function;
 	Stage.align = "TL";
 
 
-// Object Screen Functions
+// --2 -- Object Screen Functions
 
 toggleFullScreen = function():Void
 {
@@ -64,8 +64,6 @@ toggleFullScreen = function():Void
 	}
 }
 
-
-
 resizeappListener.onResize = function ():Void
 	{
 
@@ -77,7 +75,10 @@ resizeappListener.onResize = function ():Void
 
 Stage.addListener (resizeappListener);
 
-//Load Effects and Motion
+
+
+// --3 -- Load Effects and Motion
+
 
 this.createEmptyMovieClip ("appContainer_mc",0);
 
@@ -119,7 +120,9 @@ appListener.onLoadComplete = function ():Void
 
 appMVL.addListener (appListener);
 
-//Contextual Menu
+
+// --4-- Contextual Menu
+
 
 _level0.appMenu = appMenu;
 
@@ -149,7 +152,9 @@ appMenu.hideBuiltInItems ();
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
-// Other Motion
+
+// --5-- Other Motion
+
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -205,7 +210,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 }
 
 
-// Object Prototype Fader 
+// --6-- Object Prototype Fader 
 
 
 MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
@@ -223,7 +228,8 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 };
 
 
-// Start MainFrame
+// --7-- Start MainFrame
+
 
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
