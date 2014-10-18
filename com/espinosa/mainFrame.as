@@ -19,7 +19,7 @@ var appMusic_mc:MovieClip;
 var _square:MovieClip;
 var appClipContent:MovieClip;
 var appClipBar2_mc:MovieClip;
-appBackgroundBio_mc:MovieClip;
+var appBackgroundBio_mc:MovieClip;
 
 var appMVL:MovieClipLoader = new MovieClipLoader ();
 var appListener:Object = new Object ();
@@ -32,21 +32,21 @@ var blur:BlurFilter = new BlurFilter (totalBlur, totalBlur, 3);
 
 var appMenu:ContextMenu = new ContextMenu ();
 
-var appCopyright:Function;
+var onCopyright:Function;
 var onMail:Function;
 
 
 
 //Init Values
 
-this.appBackgroundBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
-this.appBackgroundBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
+	this.appBackgroundBio_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
+	this.appBackgroundBio_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appVideo_mc._alpha = this.appImages_mc._alpha =0;
 
 
-toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
+	toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
 
-Stage.scaleMode = "noScale";
-Stage.align = "TL";
+	Stage.scaleMode = "noScale";
+	Stage.align = "TL";
 
 
 // Object Screen Functions
@@ -67,12 +67,12 @@ toggleFullScreen = function():Void
 
 
 resizeappListener.onResize = function ():Void
-{
+	{
 
 	toggleFullScreenButton._x = 900;
 	toggleFullScreenButton._y = 13;
 	toggleFullScreenButton.appScreen_txt.text = "appScreen normal";
-};
+	};
 
 
 Stage.addListener (resizeappListener);
@@ -80,8 +80,9 @@ Stage.addListener (resizeappListener);
 //Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
-this.appContainer_mc._x = 0;
-this.appContainer_mc._y = 0;
+
+	this.appContainer_mc._x = 0;
+	this.appContainer_mc._y = 0;
 appContainer_mc.filters = new Array (blur);
 
 appListener.onLoadStart = function ()
@@ -122,31 +123,29 @@ appMVL.addListener (appListener);
 
 _level0.appMenu = appMenu;
 
-appMenu.hideBuiltInItems ();
-
 onCopyright = function ():Void
-{
-trace ("onCopyright(" + arguments + ")");
-getURL ("http://segonquart.net", "_blank");
-};
+	{
+	trace ("onCopyright(" + arguments + ")");
+	getURL ("http://segonquart.net", "_blank");
+	};
 
 onMail = function ():Void
-{
-trace ("onCopyright(" + arguments + ")");
-getURL ("mailto:Segonquart Studio <2qt@segonquart.net>");
-};
+	{
+	trace ("onCopyright(" + arguments + ")");
+	getURL ("mailto:Segonquart Studio <2qt@segonquart.net>");
+	};
+
+appMenu.hideBuiltInItems ();
+
+	var item_ = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
+	var item0 = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
+	var item2 = new ContextMenuItem ("http://www.segonquart.net", onCopyright);
+	var item3 = new ContextMenuItem ("2qt@segonquart.net", onMail);
 
 
-var item_ = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
-var item0 = new ContextMenuItem ("Developed by Segonquart Studio", onCopyright);
-var item2 = new ContextMenuItem ("http://www.segonquart.net", onCopyright);
-var item3 = new ContextMenuItem ("delfin@delfiramirez.info", onMail);
-
-
-item_.separatorBefore = true;
-item0.separatorBefore = true;
-item1.separatorBefore = true;
-
+	item_.separatorBefore = true;
+	item0.separatorBefore = true;
+	item1.separatorBefore = true;
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
@@ -206,7 +205,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 }
 
 
-// Object Prototype Fader
+// Object Prototype Fader 
 
 
 MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
@@ -228,11 +227,11 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
-mcLoader.addListener (this);
-mcLoader.loadClip ("barra.swf",container);
+	mcLoader.addListener (this);
+	mcLoader.loadClip ("appBar.swf",container);
 
 onLoadInit = function(mc:MovieClip)
-{
+	{
 	trace ("onLoadInit: " + mc);
-}
+	}
 
