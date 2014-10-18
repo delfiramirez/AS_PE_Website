@@ -130,7 +130,7 @@ appListener.onLoadComplete = function ():Void
 
 appMVL.addListener (appListener);
 
-//Private Method Contextual Menu
+//Private Method Custom Contextual Menu
 
 _level0.appMenu = appMenu;
 
@@ -162,7 +162,7 @@ item1.separatorBefore = true;
 
 appMenu.customItems = [item_, item0, item2, item3, item1];
 
-// Private Method Motions
+// Private Method : Object SQUARE Motion
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -241,7 +241,7 @@ MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip)
 var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
 mcLoader.addListener (this);
-mcLoader.loadClip ("barra.swf",container);
+mcLoader.loadClip ("appClipBar2.swf",container);
 
 onLoadInit = function(mc:MovieClip)
 {
