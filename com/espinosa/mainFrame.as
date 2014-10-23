@@ -50,12 +50,15 @@ Stage.addListener (resizeappListener);
 // --- Public Methods : Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
-this.appContainer_mc._x = 0;
-this.appContainer_mc._y = 0;
+
+
 appContainer_mc.filters = new Array (blur);
 
 appListener.onLoadInit = function(appContainer_mc:MovieClip):Void
 {
+
+this.appContainer_mc._x = 0;
+this.appContainer_mc._y = 0;
 
 this.appBackground_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
 this.appBackgroundo_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
@@ -88,11 +91,14 @@ appListener.onLoadComplete = function (appContainer_mc:MovieClip):Void
 	onEnterFrame = function ():Void
 	{
 		appContainer_mc._alpha += 5;
+		
 		if (appContainer_mc._alpha >= 100)
 		{
 			delete this.onEnterFrame;
 		}
+		
 		blurTween = new Tween (blur, "blurX", Strong.easeOut, blur.blurX, totalBlur, 1.0, true);
+		
 		blurTween.onMotionChanged = function ()
 		{
 			blur.blurY = blur.blurX;
@@ -103,10 +109,16 @@ appListener.onLoadComplete = function (appContainer_mc:MovieClip):Void
 
 appMVL.addListener (appListener);
 
+var urlAppString:String = "assets/swf/appClipBar2.swf";
+
+
 var appContainer_mc:MovieClip = this.createEmptyMovieClip ("aContainer_mc", this.getNextHighestDepth ());
+
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
+
 mcLoader.addListener (appListener);
-mcLoader.loadClip ("assets/swf/appClipBar2.swf", aContainer_mc);
+
+mcLoader.loadClip (urlAppString , aContainer_mc);
 
 // -- Private Method Custom Contextual Menu --
 
