@@ -78,4 +78,4 @@ var unloadAppMediaParent:Function;
 var hideappBackgroundColoured:Function;
 var hideMovieclipSquare:Function;
 
-ar applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf")
+var applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf")
