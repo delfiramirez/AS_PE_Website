@@ -49,8 +49,9 @@ Stage.addListener (resizeappListener);
 
 // --- Public Methods : Load Effects and Motion
 
-this.createEmptyMovieClip ("appContainer_mc",0);
+var urlAppString:String = "assets/swf/appClipBar2.swf";
 
+this.createEmptyMovieClip ("appContainer_mc",0);
 
 appContainer_mc.filters = new Array (blur);
 
@@ -108,9 +109,6 @@ appListener.onLoadComplete = function (appContainer_mc:MovieClip):Void
 };
 
 appMVL.addListener (appListener);
-
-var urlAppString:String = "assets/swf/appClipBar2.swf";
-
 
 var appContainer_mc:MovieClip = this.createEmptyMovieClip ("aContainer_mc", this.getNextHighestDepth ());
 
