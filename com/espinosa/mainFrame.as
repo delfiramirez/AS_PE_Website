@@ -4,8 +4,7 @@ import mx.transitions.easing.Strong;
 import Sound2;
 import com.mosesSupposes.fuse.*;
 
-//Thanks Moses...and respect ;-)
-//-------------------------------
+// -- Thanks Moses...and respect ;-) --
 
 
 ZigoEngine.simpleSetup (Shortcuts,PennerEasing);
@@ -13,10 +12,7 @@ ZigoEngine.register (PennerEasing,Shortcuts,FuseFMP,FuseItem);
 
 
 
-//--Init Values--
-
-this.appBackground_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
-this.appBackgroundo_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
+// -- Init Values--
 
 
 toggleFullScreenButton.appScreen_txt.text = "appScreen complet";
@@ -25,7 +21,7 @@ Stage.scaleMode = "noScale";
 Stage.align = "TL";
 
 
-// Object Screen Functions
+// -- Object Screen Functions --
 
 toggleFullScreen = function():Void
 {
@@ -51,21 +47,22 @@ resizeappListener.onResize = function ():Void
 
 Stage.addListener (resizeappListener);
 
-//Public Methods : Load Effects and Motion
+// --- Public Methods : Load Effects and Motion
 
 this.createEmptyMovieClip ("appContainer_mc",0);
 this.appContainer_mc._x = 0;
 this.appContainer_mc._y = 0;
 appContainer_mc.filters = new Array (blur);
 
-appListener.onLoadInit = function(appContainer:MovieClip):Void
+appListener.onLoadInit = function(appContainer_mc:MovieClip):Void
 {
 
-trace ("onLoadInit: " + appContainer);
+this.appBackground_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = false;
+this.appBackgroundo_mc._alpha = this.appClipBar2_mc._alpha = this.appMusic_mc._alpha = this.appappVideo_mc._alpha = this.appImages_mc._alpha =0;
 
 }
 
-appListener.onLoadError = function(appContainer:MovieClip, errorCode:String, httpStatus:Number):Void
+appListener.onLoadError = function(appContainer_mc:MovieClip, errorCode:String, httpStatus:Number):Void
 {
 
     trace("errorCode: " + errorCode);
@@ -81,12 +78,12 @@ appListener.onLoadStart = function ():Void
 		appContainer_mc.filters = new Array (blur);
 	};
 
-
+	this.appBackground_mc._visible = this.appClipContent._visible = this.appClipBar2_mc._visible = true;
 	appContainer_mc._alpha = 0;
 };
 
 
-appListener.onLoadComplete = function ():Void
+appListener.onLoadComplete = function (appContainer_mc:MovieClip):Void
 {
 	onEnterFrame = function ():Void
 	{
@@ -106,12 +103,12 @@ appListener.onLoadComplete = function ():Void
 
 appMVL.addListener (appListener);
 
-var appContainer:MovieClip = this.createEmptyMovieClip ("appContainer_mc", this.getNextHighestDepth ());
+var appContainer_mc:MovieClip = this.createEmptyMovieClip ("aContainer_mc", this.getNextHighestDepth ());
 var mcLoader:MovieClipLoader = new MovieClipLoader ();
 mcLoader.addListener (appListener);
-mcLoader.loadClip ("assets/swf/appClipBar2.swf", appContainer_mc);
+mcLoader.loadClip ("assets/swf/appClipBar2.swf", aContainer_mc);
 
-// --Private Method Custom Contextual Menu --
+// -- Private Method Custom Contextual Menu --
 
 _level0.appMenu = appMenu;
 
@@ -140,7 +137,7 @@ trace ("onCopyright(" + arguments + ")");
 getURL ("mailto:Segonquart Studio <2qt@segonquart.net>");
 };
 
-// Private Method : Object SQUARE Motion
+// -- Private Method : Object SQUARE Motion --
 
 moveSquare = function(targetX:Number, targetY:Number)
 {
@@ -195,7 +192,7 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number):Void
 	}
 }
 
-// --Private Method : Object Prototype Fader --
+// -- Private Method : Object Prototype Fader --
 
 MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip):Void
 {
