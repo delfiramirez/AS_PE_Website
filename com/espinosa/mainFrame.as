@@ -117,7 +117,7 @@ appMenu.hideBuiltInItems ();
 var item:ContextMenuItem_ = new ContextMenuItem ("Developed by Segonquart Studio 2008", onCopyright);
 var item0:ContextMenuItem = new ContextMenuItem ("Developed by Segonquart Studio 2008", onCopyright);
 var item2:ContextMenuItem = new ContextMenuItem ("http://www.segonquart.net", onCopyright);
-var item3:ContextMenuItem = new ContextMenuItem ("delfin@delfiramirez.info", onMail);
+var item3:ContextMenuItem = new ContextMenuItem ("delfin@segonquart.net", onMail);
 
 item_.separatorBefore = true;
 item0.separatorBefore = true;
