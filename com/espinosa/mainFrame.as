@@ -11,45 +11,6 @@ import com.mosesSupposes.fuse.*;
 ZigoEngine.simpleSetup (Shortcuts,PennerEasing);
 ZigoEngine.register (PennerEasing,Shortcuts,FuseFMP,FuseItem);
 
-var BASE_URL:String = "http://www.pereespinosa.net";
-var appScreen_txt:Text;
-var appappVideo_mc:MovieClip;
-var appImages_mc:MovieClip;
-var appMusic_mc:MovieClip;
-var _square:MovieClip;
-var appClipContent:MovieClip;
-var appClipBar2_mc:MovieClip;
-var appBackground_mc:MovieClip;
-var appAuthor_mc:MovieClip;
-var appAuthorBio_mc:MovieClip;
-
-var app_mc:MovieClip;
-var dest_mc:MovieClip;
-
-var appMVL:MovieClipLoader = new MovieClipLoader ();
-var appListener:Object = new Object ();
-var resizeappListener:Object = new Object ();
-
-var addEventListener:Function;
-var removeEventListener:Function;
-var onResize:Function;
-var onLoadStart:Function;
-var onLoadComplete:Function;
-
-
-var totalBlur:Number = 8;
-var noBlur:Number = 0;
-var blurTween:Tween;
-var blur:BlurFilter = new BlurFilter (totalBlur, totalBlur, 3);
-
-var appMenu:ContextMenu = new ContextMenu ();
-
-var appCopyright:Function;
-var onMail:Function;
-
-var moveSquare:Function;
-var appSquareMov:Function;
-
 
 
 //--Init Values--
