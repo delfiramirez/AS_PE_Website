@@ -1,0 +1,133 @@
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+#bytes, 0-2147483647(2GB)
+LimitRequestBody 10240000
+
+Options -Indexes
+DirectoryIndex index.html index.php /index.php
+
+<IfModule mod_alias.c>
+RedirectMatch 403 /(.*)/xmlrpc\.php$
+</IfModule>
+
+AddType application/octet-stream .mov .mp3 .zip
+
+
+AddDefaultCharset UTF-8
+
+
+Options -ExecCGI
+AddHandler cgi-script .pl .py .jsp .asp .html .htm .shtml .sh .cgi
+
+
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|OPTIONS|POST|PUT)
+RewriteRule .* - [F]
+
+SetEnvIfNoCase ^User-Agent$ .*(craftbot|download|extract|stripper|sucker|ninja|clshttp|webspider|leacher|collector|grabber|webpictures) HTTP_SAFE_BADBOT
+SetEnvIfNoCase ^User-Agent$ .*(libwww-perl|aesop_com_spiderman) HTTP_SAFE_BADBOT
+Deny from env=HTTP_SAFE_BADBOT
+
+
+SetEnvIfNoCase ^If-Modified-Since$ "(.+)" HTTP_IF_MODIFIED_SINCE=$1
+SetEnvIfNoCase ^If-None-Match$ "(.+)" HTTP_IF_NONE_MATCH=$1
+SetEnvIfNoCase ^Cache-Control$ "(.+)" HTTP_CACHE_CONTROL=$1
+SetEnvIfNoCase ^Connection$ "(.+)" HTTP_CONNECTION=$1
+SetEnvIfNoCase ^Keep-Alive$ "(.+)" HTTP_KEEP_ALIVE=$1
+SetEnvIfNoCase ^Authorization$ "(.+)" HTTP_AUTHORIZATION=$1
+SetEnvIfNoCase ^Cookie$ "(.+)" HTTP_MY_COOKIE=$1
+
+## REQUIRE SUBDOMAIN
+RewriteCond %{HTTP_HOST} !^$
+RewriteCond %{HTTP_HOST} !^assets\.pereespinosa\.net$ [NC]
+RewriteRule ^/(.*)$ http://pereespinosa.net/$1 [L,R=301]
+
+## SEO REWRITES
+#@RewriteRule ^(.*)/blog/(.*)$ $1/personal/$2 [L,R=301]
+#RewriteRule ^(.*)/contact/(.*)$ $1/contact/$2 [L,R=301]
+
+
+
+AddType 'application/rdf+xml; charset=UTF-8' .rdf
+AddType 'application/xhtml+xml; charset=UTF-8' .xhtml
+AddType 'application/xhtml+xml; charset=UTF-8' .xhtml.gz
+AddType 'text/html; charset=UTF-8' .html
+AddType 'text/html; charset=UTF-8' .html.gz
+AddType application/octet-stream .rar .chm .bz2 .tgz .msi .pdf .exe
+AddType application/vnd.ms-excel .csv
+AddType application/x-httpd-php-source .phps
+AddType application/x-pilot .prc .pdb
+AddType application/x-shockwave-flash .swf
+AddType application/xrds+xml .xrdf
+AddType text/plain .ini .sh .bsh .bash .awk .nawk .gawk .csh .var .c .in .h .asc .md5 .sha .sha1
+AddType video/x-flv .flv
+
+
+<ifModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 5 seconds"
+    ExpiresByType image/x-icon "access plus 2592000 seconds"
+    ExpiresByType image/jpeg "access plus 2592000 seconds"
+    ExpiresByType image/png "access plus 2592000 seconds"
+    ExpiresByType image/gif "access plus 2592000 seconds"
+    ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+    ExpiresByType text/css "access plus 604800 seconds"
+    ExpiresByType text/javascript "access plus 216000 seconds"
+    ExpiresByType application/javascript "access plus 216000 seconds"
+    ExpiresByType application/x-javascript "access plus 216000 seconds"
+    ExpiresByType text/html "access plus 600 seconds"
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
+	ExpiresByType application/xml "access plus 0 seconds"
+	ExpiresByType text/xml "access plus 0 seconds"
+</ifModule>
+
+<ifModule mod_headers.c>
+    <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(css)$">
+        Header set Cache-Control "public"
+    </filesMatch>
+    <filesMatch "\.(js)$">
+        Header set Cache-Control "private"
+    </filesMatch>
+    <filesMatch "\.(x?html?|php)$">
+        Header set Cache-Control "private, must-revalidate"
+    </filesMatch>
+</ifModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|form)$">
+Header unset ETag
+FileETag None
+ExpiresDefault "access plus 1 year"
+Header unset ETag
+FileETag None
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_autoindex.c>
+Options -Indexes
+</IfModule>
+
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+Order allow,deny
+Deny from all
+Satisfy All
+</FilesMatch>
+ 
+
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{HTTP_REFERER} !.*carlosmata.eu.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
+
