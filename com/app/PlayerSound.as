@@ -1,3 +1,4 @@
+
 class PlayerSound extends Sound {
 	
 	function PlayerSound (target:Object) {
