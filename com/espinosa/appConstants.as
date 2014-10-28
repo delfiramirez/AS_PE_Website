@@ -9,6 +9,7 @@ var appClipBar2_mc:MovieClip;
 var appBackground_mc:MovieClip;
 var appAuthor_mc:MovieClip;
 var appAuthorBio_mc:MovieClip;
+var appIntroText_mc:MovieClip;
 
 var app_mc:MovieClip;
 var dest_mc:MovieClip;
@@ -24,6 +25,7 @@ var removeEventListener:Function;
 var onResize:Function;
 var onLoadStart:Function;
 var onLoadComplete:Function;
+
 
 
 var totalBlur:Number = 8;
@@ -78,4 +80,4 @@ var unloadAppMediaParent:Function;
 var hideappBackgroundColoured:Function;
 var hideMovieclipSquare:Function;
 
-var applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf")
+var applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf");
