@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<videos>
+    <video 
+        thumb="/data/thumbs/vt01.jpg" 
+        name="Atura el Temps" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/directe.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt02.jpg" 
+        name="Quedat per Sempre aqui" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/bn.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt03.jpg" 
+        name="Parla" 
+        desc="Pere Espinosa - He Vist La Llum"  
+        url="/data/streams/parla_comp.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt04.jpg" 
+        name="Cau" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/cau.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt05.jpg" 
+        name="Obre be els ulls" 
+        desc="Pere Espinosa - He Vist La Llum"  
+        url="/data/streams/croma.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt06.jpg" 
+        name="No Miris" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/nomiris.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt01.jpg" 
+        name="Atura el Temps" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/directe.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt02.jpg" 
+        name="Quedat per Sempre aqui" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/bn.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt03.jpg" 
+        name="Parla" 
+        desc="Pere Espinosa - He Vist La Llum"  
+        url="/data/streams/parla_comp.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt04.jpg" 
+        name="Cau" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/cau.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt05.jpg" 
+        name="Obre be els ulls" 
+        desc="Pere Espinosa - He Vist La Llum"  
+        url="/data/streams/croma.flv" /> 
+    <video 
+        thumb="/data/thumbs/vt06.jpg" 
+        name="No Miris" 
+        desc="Pere Espinosa - Cops Baixos"  
+        url="/data/streams/nomiris.flv" /> 
+</videos>

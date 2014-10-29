@@ -1,0 +1,33 @@
+<body>
+    <img align='left' src='img/youtube.jpg' width='137' height='103' hspace='20' vspace='10' />
+    <header>Pere a YouTube</header>
+    <br />
+    <content>
+        <p>Els millors videos de Pere Espinosa i Miopia al portal de videos YouTube</p>
+        <br />
+        <A HREF="http://www.youtube.com/results?search_query=pere+espinosa&search_type=&aq=fm">http://wwww.youtube.com</A>
+        <br />
+    </content>
+    <pie>---------------------------</pie>
+    <br />
+    <img align='left' src='img/myspace.jpg' width='137' height='103' hspace='20' vspace='10' />
+    <header>Pere a Facebook</header>
+    <br />
+    <content>
+        <p>Parla amb en Pere a FaceBook</p>
+        <br />
+        <A HREF="http://www.facebook.com/people/Pere_Espinosa_Mora/1249284963">http://www.facebook.com/pereespinosa</A>
+        <br />
+    </content>
+    <pie>---------------------------</pie>
+    <br />
+    <img align='left' src='img/facebook.jpg' width='137' height='103' hspace='20' vspace='10' />
+    <header>Pere a MySpace</header>
+    <br />
+    <content>
+        <p>Totes les novetats,can&ccedil;ons </p>
+        <br />
+        <A HREF="http://www.diarioti.com/gate/n.php?id=7327">www.myspace.com/pereespinosa</A>
+        <br />
+    </content>
+</body>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+﻿<player autoplay='yes'>
+    <song
+        txt="No Amaguis la Veritat"
+        album="2009"
+        artist="Pere Espinosa"
+        mp3="/data/audio/noamaguis.mp3"/>
+    <song
+        txt="Where is Kate (DR Bollocks Mix)"
+        album="'Remixes"
+        artist="Pere Espinosa"
+        mp3="/data/audio/kate_2.mp3"/>
+    <song
+        txt="Guanyar"
+        album="2009"
+        artist="Pere Espinosa"
+        mp3="/data/audio/guanyar.mp3"/>
+    <song
+        txt="No sabem que vols"
+        album="Remixes"
+        artist="Pere Espinosa"
+        mp3="/data/audio/nosabem.mp3"/>
+    <song
+        txt="Miro dalt el cel -Club Mix-"
+        album="Remixes"
+        artist="Pere Espinosa"
+        mp3="/data/audio/miroeclubmix.mp3"/>
+    <song
+        txt="Miro dalt el cel"
+        album="Remixes"
+        artist="Pere Espinosa"
+        mp3="/data/audio/mirodaltM1.mp3"/>
+    <song
+        txt="Miro dalt el cel electro"
+        album="Remixes"
+        artist="Pere Espinosa"
+        mp3="/data/audio/miro.mp3"/>
+</player>
