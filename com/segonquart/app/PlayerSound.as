@@ -1,5 +1,5 @@
 
-class PlayerSound extends Sound {
+class com.segonquart.app.PlayerSound extends Sound {
 	
 	function PlayerSound (target:Object) {
 		super(target);
