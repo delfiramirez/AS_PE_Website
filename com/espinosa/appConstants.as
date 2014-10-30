@@ -1,6 +1,12 @@
 ﻿class com.espinosa.appConstants
 {
 	public static var BASE_URL:String = "http://www.pereespinosa.net";
+	
+	// -- Strings && URLs
+
+	public static var applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf");
+	public static var urlAssetsClipBar:String = "assets/swf/appClipBar2.swf";
+
 	public var appScreen_txt:Text;
 	public var appappVideo_mc:MovieClip;
 	public var appImages_mc:MovieClip;
@@ -12,6 +18,7 @@
 	public var appAuthor_mc:MovieClip;
 	public var appAuthorBio_mc:MovieClip;
 	public var appIntroText_mc:MovieClip;
+	public var toggleFullScreenButton:MovieClip;
 
 	public var app_mc:MovieClip;
 	public var dest_mc:MovieClip;
@@ -19,6 +26,7 @@
 	var appMVL:MovieClipLoader = new MovieClipLoader ();
 
 	// -- Private Functions --
+	
 	private var appListener:Object = new Object ();
 	private var resizeappListener:Object = new Object ();
 
@@ -27,8 +35,6 @@
 	private var onResize:Function;
 	private var onLoadStart:Function;
 	private var onLoadComplete:Function;
-
-
 
 	public var totalBlur:Number = 8;
 	public var noBlur:Number = 0;
@@ -39,9 +45,9 @@
 
 	public var appCopyright:Function;
 	public var onMail:Function;
-
 	public var moveSquare:Function;
 	public var appSquareMov:Function;
+
 
 
 	public static var speed:Number = 9;
@@ -65,10 +71,11 @@
 	public var appPrivacy_mc:MovieClip;
 	public var appTop_mc:MovieClip;
 
-	public var contact_txt:TextField;
-	public var credits_txt:TextField;
+	public var contact_txt:String;
+	public var credits_txt:String;
+	public var policy_txt:String;
 
-	public var appStart:Function;
+
 
 	// -- Getters and Setters --
 
@@ -80,7 +87,6 @@
 	public var unloadAppMediaParent:Function;
 	public var hideappBackgroundColoured:Function;
 	public var hideMovieclipSquare:Function;
-
-	public static var applicationFiles_array:Array = new Array("appAuthorBio.swf","appURL.swf","appMusic.swf","appMultimedia.swf","appCredits.swf","appPrivacy.swf");
-
+	
+		public var appStart:Function;
 }
