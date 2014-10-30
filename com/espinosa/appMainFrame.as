@@ -51,7 +51,10 @@ Stage.addListener (resizeappListener);
 
 // --- Public Methods : Load Effects and Motion
 
-var urlAppString:String = "assets/swf/appClipBar2.swf";
+if (file_exists(urlAssetsClipBar)) 
+{
+var urlAppString = urlAssetsClipBar;
+}
 
 this.createEmptyMovieClip ("appContainer_mc",0);
 
