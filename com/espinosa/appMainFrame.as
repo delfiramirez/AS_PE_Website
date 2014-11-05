@@ -1,10 +1,13 @@
+
+import mx.data.binding.ObjectDumper;
 import flash.filters.BlurFilter;
 import mx.transitions.Tween;
 import mx.transitions.easing.Strong;
-import Sound2;
+import com.espinosa.appConstants;
+import com.segonquart.Sonido;
 import com.mosesSupposes.fuse.*;
 
-import com.espinosa.appConstants;
+
 
 // -- Thanks Moses...and respect ;-) --
 
@@ -103,6 +106,8 @@ appListener.onLoadComplete = function (appContainer_mc:MovieClip):Void
 	onEnterFrame = function ():Void
 	{
 		appContainer_mc._alpha += 5;
+		
+		trace(ObjectDumper.toString(_global));
 		
 		if (appContainer_mc._alpha >= 100)
 		{
