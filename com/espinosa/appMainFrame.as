@@ -8,6 +8,10 @@ import com.espinosa.appConstants;
 
 // -- Thanks Moses...and respect ;-) --
 
+var appTimeline:MovieClip = this;
+
+if ( typeof (appTimeline) == "movieclip" && this._currentframe =  "appMainFrame")
+{
 
 ZigoEngine.simpleSetup (Shortcuts,PennerEasing);
 ZigoEngine.register (PennerEasing,Shortcuts,FuseFMP,FuseItem);
@@ -219,16 +223,17 @@ appSquareMov = function(_square:MovieClip, targetX:Number, targetY:Number)
 
 // -- Private Method : Object Prototype Fader --
 
-MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip):Void
-{
-    dest_mc._alpha = 100;
-    onEnterFrame = function ()
-    {
-    dest_mc._alpha -= 10;
-    if (dest_mc._alpha <= 0)
-        {
-        delete this.onEnterFrame;
-        _root.appMVL.loadClip (app_mc,dest_mc);
-        }
-    };
+	MovieClip.prototype.loadFade = function (app_mc:MovieClip, dest_mc:MovieClip):Void
+	{
+		dest_mc._alpha = 100;
+		onEnterFrame = function ()
+		{
+		dest_mc._alpha -= 10;
+		if (dest_mc._alpha <= 0)
+			{
+			delete this.onEnterFrame;
+			_root.appMVL.loadClip (app_mc,dest_mc);
+			}
+		};
+	};
 };
